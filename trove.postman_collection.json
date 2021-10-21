@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "a6da8a55-f4a1-4b10-8949-38ed643a80a8",
+		"name": "trove",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"adesinak4@gmail.com\",\n    \"password\": \"Kisam3had4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.64.2/trove/portal/login.php",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"64",
+						"2"
+					],
+					"path": [
+						"trove",
+						"portal",
+						"login.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Kisame Holmes\",\n    \"email\": \"adesinak4@gmail.com\",\n    \"password\": \"Kisam3had4\",\n    \"portfolioValue\": \"10000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.64.2/trove/portal/register.php",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"64",
+						"2"
+					],
+					"path": [
+						"trove",
+						"portal",
+						"register.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-info",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJhdWQiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJpYXQiOjE2MzQ3OTU4MDIsImV4cCI6MTYzNDc5OTQwMiwiZGF0YSI6eyJ1c2VyX2lkIjoiMSJ9fQ.92tOdVRGd0kbqCvG-4jnluOLMEtfJj82dvK2PITdukM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.64.2/trove/user-info.php",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"64",
+						"2"
+					],
+					"path": [
+						"trove",
+						"user-info.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-profile",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJhdWQiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJpYXQiOjE2MzQ3OTU4MDIsImV4cCI6MTYzNDc5OTQwMiwiZGF0YSI6eyJ1c2VyX2lkIjoiMSJ9fQ.92tOdVRGd0kbqCvG-4jnluOLMEtfJj82dvK2PITdukM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Kisame Holmes\",\n    \"email\": \"adesinak4@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.64.2/trove/portal/update-profile.php",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"64",
+						"2"
+					],
+					"path": [
+						"trove",
+						"portal",
+						"update-profile.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-password",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJhdWQiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJpYXQiOjE2MzQ3OTU4MDIsImV4cCI6MTYzNDc5OTQwMiwiZGF0YSI6eyJ1c2VyX2lkIjoiMSJ9fQ.92tOdVRGd0kbqCvG-4jnluOLMEtfJj82dvK2PITdukM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"Kisam3had4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.64.2/trove/portal/update-password.php",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"64",
+						"2"
+					],
+					"path": [
+						"trove",
+						"portal",
+						"update-password.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "portfolio-value",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJhdWQiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJpYXQiOjE2MzQ3OTU4MDIsImV4cCI6MTYzNDc5OTQwMiwiZGF0YSI6eyJ1c2VyX2lkIjoiMSJ9fQ.92tOdVRGd0kbqCvG-4jnluOLMEtfJj82dvK2PITdukM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.64.2/trove/portfolio/portfolio-value.php",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"64",
+						"2"
+					],
+					"path": [
+						"trove",
+						"portfolio",
+						"portfolio-value.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loan-apply",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJhdWQiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJpYXQiOjE2MzQ3OTU4MDIsImV4cCI6MTYzNDc5OTQwMiwiZGF0YSI6eyJ1c2VyX2lkIjoiMSJ9fQ.92tOdVRGd0kbqCvG-4jnluOLMEtfJj82dvK2PITdukM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 6000,\n    \"period\": 8\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.64.2/trove/loan/apply.php",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"64",
+						"2"
+					],
+					"path": [
+						"trove",
+						"loan",
+						"apply.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loan-balance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJhdWQiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJpYXQiOjE2MzQ3OTU4MDIsImV4cCI6MTYzNDc5OTQwMiwiZGF0YSI6eyJ1c2VyX2lkIjoiMSJ9fQ.92tOdVRGd0kbqCvG-4jnluOLMEtfJj82dvK2PITdukM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.64.2/trove/loan/balance.php",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"64",
+						"2"
+					],
+					"path": [
+						"trove",
+						"loan",
+						"balance.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prorate-period",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJhdWQiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJpYXQiOjE2MzQ3OTU4MDIsImV4cCI6MTYzNDc5OTQwMiwiZGF0YSI6eyJ1c2VyX2lkIjoiMSJ9fQ.92tOdVRGd0kbqCvG-4jnluOLMEtfJj82dvK2PITdukM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.64.2/trove/loan/prorate-period.php",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"64",
+						"2"
+					],
+					"path": [
+						"trove",
+						"loan",
+						"prorate-period.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "portfolio",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJhdWQiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3Ryb3ZlXC8iLCJpYXQiOjE2MzQ3OTU4MDIsImV4cCI6MTYzNDc5OTQwMiwiZGF0YSI6eyJ1c2VyX2lkIjoiMSJ9fQ.92tOdVRGd0kbqCvG-4jnluOLMEtfJj82dvK2PITdukM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.64.2/trove/portfolio/portfolio.php",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"64",
+						"2"
+					],
+					"path": [
+						"trove",
+						"portfolio",
+						"portfolio.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

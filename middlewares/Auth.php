@@ -117,7 +117,7 @@ class Auth extends JwtHandler{
 
     protected function fetchLoan($user_id){
         try{
-            $fetch_loan_by_id = "SELECT `loanAmount`, `balance`,`duration`,`prorate` FROM `loan` WHERE `id`=:id";
+            $fetch_loan_by_id = "SELECT `email`, `loanAmount`, `balance`,`duration`,`prorate` FROM `loan` WHERE `id`=:id";
             $query_stmt = $this->db->prepare($fetch_loan_by_id);
             $query_stmt->bindValue(':id', $user_id,PDO::PARAM_INT);
             $query_stmt->execute();

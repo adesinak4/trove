@@ -55,7 +55,7 @@ else:
     if($auth->isAuth()){
         $returnData = $auth->isAuth();
         $value = $returnData{"user"}{"portfolioValue"};
-        $info = $returnData{"user"}{"id"};
+        $info = $returnData{"user"}{"email"};
 
         $val = 0.6 * $value;
     }
@@ -78,7 +78,7 @@ else:
         try{
             $prorate = $amount / $period;
             $update_query = "UPDATE `loan` SET loanAmount = :amount, balance = :amount, duration = :period, prorate = $prorate
-            WHERE id = '$info'";
+            WHERE email = '$info'";
 
             $update_stmt = $conn->prepare($update_query);
 
@@ -96,10 +96,7 @@ else:
             $returnData = msg(0,500,$e->getMessage());
         }
     endif;
-    
 endif;
 
 echo json_encode($returnData);
-
-// echo json_encode('$'.$info);
 ?>

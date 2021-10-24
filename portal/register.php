@@ -30,14 +30,14 @@ if($_SERVER["REQUEST_METHOD"] != "POST"):
 elseif(!isset($data->name) 
     || !isset($data->email) 
     || !isset($data->password)
-    // || !isset($data->portfolioValue)
+    || !isset($data->portfolioValue)
     || empty(trim($data->name))
     || empty(trim($data->email))
     || empty(trim($data->password))
-    // || empty(trim($data->portfolioValue))
+    || empty(trim($data->portfolioValue))
     ):
 
-    $fields = ['fields' => ['name','email','password']];
+    $fields = ['fields' => ['name','email','password', 'portfolioValue']];
     $returnData = msg(0,422,'Please Fill in all Required Fields!',$fields);
 
 // IF THERE ARE NO EMPTY FIELDS THEN-
@@ -46,7 +46,7 @@ else:
     $name = trim($data->name);
     $email = trim($data->email);
     $password = trim($data->password);
-    $portfolioValue = 10000;
+    $portfolioValue = trim($data->portfolioValue);
 
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)):
         $returnData = msg(0,422,'Invalid Email Address!');
@@ -70,7 +70,7 @@ else:
             
             else:
 
-                $insert_query = "INSERT INTO `users`(`name`,`email`,`password`,`portfolioValue`) VALUES(:name,:email,:password,$portfolioValue)";       
+                $insert_query = "INSERT INTO `users`(`name`,`email`,`password`,`portfolioValue`) VALUES(:name,:email,:password,:portfolioValue)";       
 
                 $insert_stmt = $conn->prepare($insert_query);
 
@@ -78,7 +78,7 @@ else:
                 $insert_stmt->bindValue(':name', htmlspecialchars(strip_tags($name)),PDO::PARAM_STR);
                 $insert_stmt->bindValue(':email', $email,PDO::PARAM_STR);
                 $insert_stmt->bindValue(':password', password_hash($password, PASSWORD_DEFAULT),PDO::PARAM_STR);
-                $insert_stmt->bindValue($portfolioValue, $portfolioValue,PDO::PARAM_STR);
+                $insert_stmt->bindValue(':portfolioValue', $portfolioValue,PDO::PARAM_STR);
 
                 $insert_stmt->execute();
 

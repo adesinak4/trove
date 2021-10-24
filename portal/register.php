@@ -30,14 +30,14 @@ if($_SERVER["REQUEST_METHOD"] != "POST"):
 elseif(!isset($data->name) 
     || !isset($data->email) 
     || !isset($data->password)
-    || !isset($data->portfolioValue)
+    // || !isset($data->portfolioValue)
     || empty(trim($data->name))
     || empty(trim($data->email))
     || empty(trim($data->password))
-    || empty(trim($data->portfolioValue))
+    // || empty(trim($data->portfolioValue))
     ):
 
-    $fields = ['fields' => ['name','email','password', 'portfolioValue']];
+    $fields = ['fields' => ['name','email','password']];
     $returnData = msg(0,422,'Please Fill in all Required Fields!',$fields);
 
 // IF THERE ARE NO EMPTY FIELDS THEN-
@@ -46,7 +46,7 @@ else:
     $name = trim($data->name);
     $email = trim($data->email);
     $password = trim($data->password);
-    $portfolioValue = trim($data->portfolioValue);
+    $portfolioValue = 10000;
 
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)):
         $returnData = msg(0,422,'Invalid Email Address!');
